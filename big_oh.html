@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>katenkasoftware</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+<style>
+html {
+  font-size: 20px; 
+  font-family: "Lato", sans-serif; 
+}
+
+h1.heading {
+    text-align: center;
+    color:  #000099;
+}
+
+p.sub {
+    text-align: center;
+    color: grey;
+}
+
+P.blocktext {
+    margin-right: auto;
+    width: 20em;
+}
+
+.center-justified {
+  text-align: left;
+  margin: 0 auto;
+  width: 30em;
+}
+
+p.quote {
+  font-style: oblique;
+  color: grey;
+}
+
+</style>
+<body>
+
+<!-- Page content -->
+
+  <div class="center-justified">
+    <h1 class="heading">katenkasoftware.com</h1>
+    <p><div><a href="index.html">home</a></p>
+  </div>
+
+  <div class="center-justified">
+    <p class="quote"></p>    
+
+    <h4>Big Oh</h4>
+
+    <p>Big Oh is a notation that is used to calculate and describe the time complexity of a method. This allows us to compare methods with one another.  <br><br>
+
+      <img src="bigocomplexities.png" alt="Big Oh Complexities" width="650" height="500">
+
+      
+        <ul>
+          <li>O(1) -> Order of 1, known as constant time. The time complexity remains the same regardless of the input size (e.g. assignments, math functions).    </li>
+          <li>O(n) -> Order of n, known as linear time. The time complexity grows directly to the input size (e.g. single for loop iterating over the input once).  </li>
+          <li>O(n2) -> Order of n squared, known as quadratic time. The time complexity grows exponentially in relation to the input size (e.g. nested for loop, requiring multiple iterations over the inner loop). </li>
+          <li>O(log n) -> Order of log n, known as logarithmic time. The time complexity grows in relation to the log of n (e.g. looping over the input and incrementing the iterator by a value greater than one, so not all indices in the input are accessed).  </li>
+          <li>Asymptotic behaviour / analysis -> evaluation of the algorithm performance in terms of its input size.  </li>
+          <li>Best case -> scenario that requires the least number of instructions to achieve the goal of the algorithm.   </li>
+          <li>Average case -> scenario that requires the average number of instructions to achieve the goal of the algorithm.   </li>
+          <li>Worst case –> big oh typically looks at worst case scenario, that is the scenario that would take the longest time. Even though in practice, some executions of the method would be shorter or longer depending on the input.    </li>
+          <li>Frequency count method –> counting the number of statements that get executed in the method. Iterations count for the number of times that they can be executed (n + 1 times usually).   </li>
+      </ul>
+    
+      <img src="bigo1.png" alt="Big Oh Calculations 1" width="500" height="700">
+      <img src="bigo2.png" alt="Big Oh Calculations 2" width="500" height="150">
+
+  <br><br><br><br>
+  </div>
+  
+</div>
+
+</body>
+</html>

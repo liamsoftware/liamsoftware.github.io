@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>katenkasoftware</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+<style>
+html {
+  font-size: 20px; 
+  font-family: "Lato", sans-serif; 
+}
+
+h1.heading {
+    text-align: center;
+    color:  #000099;
+}
+
+p.sub {
+    text-align: center;
+    color: grey;
+}
+
+P.blocktext {
+    margin-right: auto;
+    width: 20em;
+}
+
+.center-justified {
+  text-align: left;
+  margin: 0 auto;
+  width: 30em;
+}
+
+p.quote {
+  font-style: oblique;
+  color: grey;
+}
+
+</style>
+<body>
+
+<!-- Page content -->
+
+  <div class="center-justified">
+    <h1 class="heading">katenkasoftware.com</h1>
+    <p><div><a href="index.html">home</a></p>
+  </div>
+
+  <div class="center-justified">
+    <p class="quote"></p>    
+
+    <h4>Kafka Overview</h4>
+
+    <p>Kafka is a messaging system. It provides a communication service between applications. An application can send messages to Kafka, which are then consumed by other applications.   <br><br>
+
+    Kafka decouples applications and provides the ability to manage concerns around messaging. This reduces the complexity of the applications, the applications can focus on their core requirement, without the need to manage message transport. Applications focus on processing messages, instead of focusing on managing the messages. Kafka will guarantee the order of messages.   <br><br>
+
+    <img src="kafka1.png" alt="Kafka overview 1" width="600" height="330">
+
+    Messages are known as <strong>records</strong>. Applications that I have worked with have stored these records in a JSON or YAML format. The record will consist of a <strong>key, value, and timestamp</strong>. Messages are written to <strong>topics</strong> by the applications. This application is known as the <strong>producer</strong>. When another application connects to that topic as a <strong>consumer</strong>, the message are sent to that application for processing. A topic will have zero or more consumers. The order of messages will be maintained, the consumer will receive messages in the order that the producer has enqueued the message (think of a queue data structure).  <br><br>
+
+    <img src="kafka2.png" alt="Kafka overview 1" width="600" height="180">
+
+    Kafka provides 4 APIs:
+
+    <ol>
+      <li>Producer: provides an application with the ability to write messages to one or more topics.</li>
+      <li>Consumer: provides an application with the ability to consume message from one or more topics.</li>
+      <li>Streams: provides an application with the ability to consume and then produce messages onto topics, this is a hybrid of the producer and consumer. The application reacts to messages when they are sent to the topic. It allows an application to transform messages from one topic and write those transformed messages onto another topic easily. We use this a lot in our service applications where a message is manipulated or decorated by our service and then that updated message is written straight back out to another topic.</li>
+      <li>Connector: connecting to other systems e.g. databases (I’ve never worked with this API).</li> 
+    </ol><br>
+
+    Advantages of Kafka:
+
+    <ul>
+      <li>Makes the application code less complex, letting the application just focus on a single purpose. </li>
+      <li>Concerns can then be split out into different services. </li>
+      <li>Provides management around high availability of messages, and geographic replication.</li>
+      <li>Provides greater ability to scale, allowing multiple services to create and consume messages. We can split the task of processing consumed messages between different service instances which speeds up processing. Similar to concurrency, if the hardware is available to process messages concurrently by services. </li>
+      <li>Kafka provides analytics and monitoring to help manage the message processing. </li>
+    </ul><br>
+
+    Disadvantages of Kafka:
+
+    <ul>
+      <li>Messages have to be sent via the network so may have latency. </li>
+      <li>Managing Kafka can be complex. </li>
+      <li>Configuring Kafka for the load management can be difficult. </li>
+      <li>Separating out applications into single purpose services can lead to more complexity in the given number of services.  </li>
+      <li>It may be difficult to keep a mental model of the system when there are so many separate repos and services.  </li>
+    </ul><br><br>
+  
+    <br><br><br><br>
+  </div>
+  
+</body>
+</html>
